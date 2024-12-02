@@ -1,0 +1,319 @@
+/* Variables */
+:root {
+    --primary-color: #11144b;
+    --secondary-color: #ffffff;
+    --accent-color: #2c3e50;
+    --hover-color: #333;
+    --light-gray: #f9f9f9;
+    --dark-gray: #7f8c8d;
+    --background-alt: #ecf0f1;
+    --transition-time: 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.logo {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Général */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    transition: background-color var(--transition-time), color var(--transition-time);
+}
+
+body.night-mode {
+    background-color: #121212;
+    color: var(--secondary-color);
+}
+
+/* Header Minimaliste */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--primary-color);
+    text-align: center;
+}
+
+.header .content {
+    max-width: 700px;
+}
+
+.header .logo {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Nos Services */
+.services {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.services h2 {
+    font-size: 3rem;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background: var(--light-gray);
+    padding: 30px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    text-align: center;
+    transition: transform var(--transition-time), box-shadow var(--transition-time);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h3 {
+    color: var(--primary-color);
+}
+
+.service-card p {
+    color: var(--dark-gray);
+}
+
+/* Portfolio */
+.portfolio {
+    padding: 100px 20px;
+    background-color: var(--background-alt);
+    text-align: center;
+}
+
+.portfolio h2 {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.portfolio-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.portfolio-item {
+    width: 300px;
+    margin: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform var(--transition-time);
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Contact */
+.footer .contact-info {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    background: var(--accent-color);
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+/* Retour en haut */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    transition:  var(--transition-time);
+}
+
+#back-to-top:hover {
+    background: var(--hover-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio-grid {
+        justify-content: center;
+    }
+}
+/* Tarifs */
+.pricing {
+    padding: 100px 20px;
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.pricing h2 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background: var(--secondary-color);
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-time), box-shadow var(--transition-time);
+    text-align: center;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.pricing-card .price {
+    font-size: 2rem;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.pricing-card ul li {
+    margin: 10px 0;
+    color: var(--dark-gray);
+}
+
+.pricing-card button {
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:  var(--transition-time);
+}
+
+.pricing-card button:hover {
+    background: var(--hover-color);
+}
+/* Nos Réalisations */
+.projects {
+    padding: 100px 20px;
+    background-color: var(--background-alt);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.projects p {
+    margin-bottom: 40px;
+    color: var(--dark-gray);
+}
+
+.projects-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-item {
+    width: 300px;
+    background: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform var(--transition-time), box-shadow var(--transition-time);
+    text-align: center;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.project-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.project-item p {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.project-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-item a:hover {
+    text-decoration: underline;
+}
+
